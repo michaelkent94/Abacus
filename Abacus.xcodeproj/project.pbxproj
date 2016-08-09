@@ -8,12 +8,33 @@
 
 /* Begin PBXBuildFile section */
 		F71CB4421D4B866F006CE1DA /* Abacus.h in Headers */ = {isa = PBXBuildFile; fileRef = F71CB4411D4B866F006CE1DA /* Abacus.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		F71CB44A1D4B86B6006CE1DA /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71CB4491D4B86B6006CE1DA /* Constants.swift */; };
+		F71CB4521D4B8800006CE1DA /* AbacusTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71CB4511D4B8800006CE1DA /* AbacusTests.swift */; };
+		F71CB4541D4B8800006CE1DA /* Abacus.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F71CB43E1D4B866F006CE1DA /* Abacus.framework */; };
+		F71CB45C1D4B890E006CE1DA /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71CB45B1D4B890E006CE1DA /* Graph.swift */; };
+		F71CB45E1D4B8AD8006CE1DA /* UndirectedGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71CB45D1D4B8AD8006CE1DA /* UndirectedGraph.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F71CB4551D4B8800006CE1DA /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = F71CB4351D4B866F006CE1DA /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = F71CB43D1D4B866F006CE1DA;
+			remoteInfo = Abacus;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		F71CB43E1D4B866F006CE1DA /* Abacus.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Abacus.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F71CB4411D4B866F006CE1DA /* Abacus.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Abacus.h; sourceTree = "<group>"; };
 		F71CB4431D4B8670006CE1DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F71CB4491D4B86B6006CE1DA /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		F71CB44F1D4B8800006CE1DA /* AbacusTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AbacusTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F71CB4511D4B8800006CE1DA /* AbacusTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AbacusTests.swift; sourceTree = "<group>"; };
+		F71CB4531D4B8800006CE1DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		F71CB45B1D4B890E006CE1DA /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		F71CB45D1D4B8AD8006CE1DA /* UndirectedGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UndirectedGraph.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -24,6 +45,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F71CB44C1D4B8800006CE1DA /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F71CB4541D4B8800006CE1DA /* Abacus.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -31,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				F71CB4401D4B866F006CE1DA /* Abacus */,
+				F71CB4501D4B8800006CE1DA /* AbacusTests */,
 				F71CB43F1D4B866F006CE1DA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -39,6 +69,7 @@
 			isa = PBXGroup;
 			children = (
 				F71CB43E1D4B866F006CE1DA /* Abacus.framework */,
+				F71CB44F1D4B8800006CE1DA /* AbacusTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -46,10 +77,30 @@
 		F71CB4401D4B866F006CE1DA /* Abacus */ = {
 			isa = PBXGroup;
 			children = (
+				F71CB4491D4B86B6006CE1DA /* Constants.swift */,
+				F71CB45B1D4B890E006CE1DA /* Graph.swift */,
+				F71CB45D1D4B8AD8006CE1DA /* UndirectedGraph.swift */,
+				F71CB45A1D4B88F3006CE1DA /* Other */,
+			);
+			path = Abacus;
+			sourceTree = "<group>";
+		};
+		F71CB4501D4B8800006CE1DA /* AbacusTests */ = {
+			isa = PBXGroup;
+			children = (
+				F71CB4511D4B8800006CE1DA /* AbacusTests.swift */,
+				F71CB4531D4B8800006CE1DA /* Info.plist */,
+			);
+			path = AbacusTests;
+			sourceTree = "<group>";
+		};
+		F71CB45A1D4B88F3006CE1DA /* Other */ = {
+			isa = PBXGroup;
+			children = (
 				F71CB4411D4B866F006CE1DA /* Abacus.h */,
 				F71CB4431D4B8670006CE1DA /* Info.plist */,
 			);
-			path = Abacus;
+			name = Other;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -84,16 +135,38 @@
 			productReference = F71CB43E1D4B866F006CE1DA /* Abacus.framework */;
 			productType = "com.apple.product-type.framework";
 		};
+		F71CB44E1D4B8800006CE1DA /* AbacusTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F71CB4571D4B8800006CE1DA /* Build configuration list for PBXNativeTarget "AbacusTests" */;
+			buildPhases = (
+				F71CB44B1D4B8800006CE1DA /* Sources */,
+				F71CB44C1D4B8800006CE1DA /* Frameworks */,
+				F71CB44D1D4B8800006CE1DA /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F71CB4561D4B8800006CE1DA /* PBXTargetDependency */,
+			);
+			name = AbacusTests;
+			productName = AbacusTests;
+			productReference = F71CB44F1D4B8800006CE1DA /* AbacusTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		F71CB4351D4B866F006CE1DA /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0730;
 				LastUpgradeCheck = 0730;
 				ORGANIZATIONNAME = "Kent, Michael";
 				TargetAttributes = {
 					F71CB43D1D4B866F006CE1DA = {
+						CreatedOnToolsVersion = 7.3.1;
+					};
+					F71CB44E1D4B8800006CE1DA = {
 						CreatedOnToolsVersion = 7.3.1;
 					};
 				};
@@ -111,12 +184,20 @@
 			projectRoot = "";
 			targets = (
 				F71CB43D1D4B866F006CE1DA /* Abacus */,
+				F71CB44E1D4B8800006CE1DA /* AbacusTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
 		F71CB43C1D4B866F006CE1DA /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F71CB44D1D4B8800006CE1DA /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -130,10 +211,29 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F71CB45C1D4B890E006CE1DA /* Graph.swift in Sources */,
+				F71CB45E1D4B8AD8006CE1DA /* UndirectedGraph.swift in Sources */,
+				F71CB44A1D4B86B6006CE1DA /* Constants.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F71CB44B1D4B8800006CE1DA /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F71CB4521D4B8800006CE1DA /* AbacusTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F71CB4561D4B8800006CE1DA /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = F71CB43D1D4B866F006CE1DA /* Abacus */;
+			targetProxy = F71CB4551D4B8800006CE1DA /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		F71CB4441D4B8670006CE1DA /* Debug */ = {
@@ -230,6 +330,25 @@
 		F71CB4471D4B8670006CE1DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = Abacus/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.copaceticstudios.Abacus;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		F71CB4481D4B8670006CE1DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -241,21 +360,25 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 			};
-			name = Debug;
+			name = Release;
 		};
-		F71CB4481D4B8670006CE1DA /* Release */ = {
+		F71CB4581D4B8800006CE1DA /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				INFOPLIST_FILE = Abacus/Info.plist;
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				INFOPLIST_FILE = AbacusTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.copaceticstudios.Abacus;
+				PRODUCT_BUNDLE_IDENTIFIER = com.copaceticstudios.AbacusTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		F71CB4591D4B8800006CE1DA /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = AbacusTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.copaceticstudios.AbacusTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
 			};
 			name = Release;
 		};
@@ -276,6 +399,14 @@
 			buildConfigurations = (
 				F71CB4471D4B8670006CE1DA /* Debug */,
 				F71CB4481D4B8670006CE1DA /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		F71CB4571D4B8800006CE1DA /* Build configuration list for PBXNativeTarget "AbacusTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F71CB4581D4B8800006CE1DA /* Debug */,
+				F71CB4591D4B8800006CE1DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 		};

@@ -15,5 +15,3 @@ FOUNDATION_EXPORT double AbacusVersionNumber;
 FOUNDATION_EXPORT const unsigned char AbacusVersionString[];
 
 // In this header, you should import all the public headers of your framework using statements like #import <Abacus/PublicHeader.h>
-
-
