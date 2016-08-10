@@ -9,17 +9,20 @@ create a versatile library for others to use.
 **NOTE:** Abacus is still in active development and very early in the process. Therefore, implemented features are likely to change 
 and may be partially incomplete.
 
-* Undirected Graph
+* Undirected/Directed Graph
  * Add/Remove Nodes/Edges
  * BFS
  * DFS
 
 ### Planned
-* Directed Graph
 * Graph Algorithms (for Directed and Undirected)
  * Dijkstra
  * MST (Prim, Kruskal)
-* Trie
+* Trees
+ * Binary, BST
+ * Trie
+ * 2-3 Tree
+ * More?
 * Heap
  * Fibonacci
  * Binary
