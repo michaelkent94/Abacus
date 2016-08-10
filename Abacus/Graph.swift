@@ -44,7 +44,7 @@ struct GraphEdge<KeyType: Hashable, WeightType: Comparable>: CustomStringConvert
 }
 
 public protocol Graph {
-    associatedtype KeyType: Equatable
+    associatedtype KeyType: Hashable
     associatedtype WeightType: Comparable
     
     mutating func addNode(key: KeyType)

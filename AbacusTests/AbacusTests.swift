@@ -22,7 +22,7 @@ class AbacusTests: XCTestCase {
     }
     
     func testUndirectedGraph() {
-        var graph = UndirectedGraph<Int, Int>()
+        let graph = UndirectedGraph<Int, Int>()
         graph.addNode(1)
         graph.addNode(2)
         graph.addEdge(0, from: 1, to: 2)
@@ -32,7 +32,7 @@ class AbacusTests: XCTestCase {
     }
     
     func testUndirectedBfs() {
-        var graph = UndirectedGraph<Int, Int>()
+        let graph = UndirectedGraph<Int, Int>()
         graph.addNode(1)
         graph.addNode(2)
         graph.addNode(3)
@@ -54,7 +54,61 @@ class AbacusTests: XCTestCase {
     }
     
     func testUndirectedDfs() {
-        var graph = UndirectedGraph<Int, Int>()
+        let graph = UndirectedGraph<Int, Int>()
+        graph.addNode(1)
+        graph.addNode(2)
+        graph.addNode(3)
+        graph.addNode(4)
+        graph.addNode(5)
+        graph.addNode(6)
+        
+        graph.addEdge(0, from: 1, to: 2)
+        graph.addEdge(0, from: 2, to: 3)
+        graph.addEdge(0, from: 3, to: 4)
+        graph.addEdge(0, from: 5, to: 2)
+        graph.addEdge(0, from: 5, to: 6)
+        print("\(graph)")
+        
+        print("DFS")
+        graph.dfs(rootedAt: 1) { key in
+            print("\(key)")
+        }
+    }
+    
+    func testDirectedGraph() {
+        let graph = DirectedGraph<Int, Int>()
+        graph.addNode(1)
+        graph.addNode(2)
+        graph.addEdge(0, from: 1, to: 2)
+        graph.addEdge(1, from: 1, to: 2)
+        graph.removeEdge(0, from: 1, to: 2)
+        print("\(graph)")
+    }
+    
+    func testDirectedBfs() {
+        let graph = DirectedGraph<Int, Int>()
+        graph.addNode(1)
+        graph.addNode(2)
+        graph.addNode(3)
+        graph.addNode(4)
+        graph.addNode(5)
+        graph.addNode(6)
+        
+        graph.addEdge(0, from: 1, to: 2)
+        graph.addEdge(0, from: 3, to: 1)
+        graph.addEdge(0, from: 4, to: 2)
+        graph.addEdge(0, from: 2, to: 5)
+        graph.addEdge(0, from: 3, to: 6)
+        print("\(graph)")
+        
+        print("BFS")
+        graph.bfs(rootedAt: 1) { key in
+            print("\(key)")
+        }
+    }
+    
+    func testDirectedDfs() {
+        let graph = DirectedGraph<Int, Int>()
         graph.addNode(1)
         graph.addNode(2)
         graph.addNode(3)
