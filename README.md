@@ -13,11 +13,12 @@ and may be partially incomplete.
  * Add/Remove Nodes/Edges
  * BFS
  * DFS
+ * MST (Kruskal)
 
 ### Planned
 * Graph Algorithms (for Directed and Undirected)
  * Dijkstra
- * MST (Prim, Kruskal)
+ * MST (Prim)
 * Trees
  * Binary, BST
  * Trie
