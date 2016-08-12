@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class DirectedGraph<K: Hashable, W: Comparable>: Graph {
+public class DirectedGraph<K: Hashable, W: Arithmetic>: Graph {
     public typealias KeyType = K
     public typealias WeightType = W
     
@@ -16,6 +16,17 @@ public class DirectedGraph<K: Hashable, W: Comparable>: Graph {
     var edges = Dictionary<GraphNode<KeyType>, [GraphEdge<KeyType, WeightType>]>()
     
     public init() { }
+    
+    public convenience init(graph: DirectedGraph<KeyType, WeightType>) {
+        self.init()
+        nodes = graph.nodes
+        edges = graph.edges
+    }
+    
+    func copy() -> AnyObject {
+        let graph = DirectedGraph(graph: self)
+        return graph
+    }
     
     // MARK: - Modification
     
@@ -48,8 +59,26 @@ public class DirectedGraph<K: Hashable, W: Comparable>: Graph {
         edges[fromNode]?.removeAtIndex(edgeIndex)
     }
     
-    // MARK: - Searching
+    // MARK: - Helpers
     
+    func node(forKey key: KeyType) -> GraphNode<KeyType>? {
+        for node in nodes {
+            if node.key == key {
+                return node
+            }
+        }
+        return nil
+    }
+}
+
+extension DirectedGraph: CustomStringConvertible {
+    public var description: String {
+        return "Nodes: \(nodes)\nEdges:\(edges)"
+    }
+}
+
+// MARK: - Searching
+extension DirectedGraph {
     public func bfs(rootedAt rootKey: KeyType, forEach: (KeyType) -> ()) {
         var queue = [GraphNode<KeyType>]()
         guard !nodes.isEmpty,
@@ -97,21 +126,52 @@ public class DirectedGraph<K: Hashable, W: Comparable>: Graph {
             }
         }
     }
-    
-    // MARK: - Helpers
-    
-    func node(forKey key: KeyType) -> GraphNode<KeyType>? {
-        for node in nodes {
-            if node.key == key {
-                return node
+}
+
+// MARK: - Pathfinding
+extension DirectedGraph {
+//    public func dijkstra(from fromKey: KeyType) -> [(key: KeyType, distance: WeightType)] {
+//        var result = [(key: KeyType, distance: WeightType)]()
+//        
+//        
+//        
+//        return result
+//    }
+}
+
+// MARK: - Minimum Spanning Tree
+extension DirectedGraph {
+    public func kruskal() -> DirectedGraph<KeyType, WeightType> {
+        let mst = self.copy() as! DirectedGraph
+        var edgeList = [GraphEdge<KeyType, WeightType>]()
+        for (node, edges) in self.edges {
+            edgeList.appendContentsOf(edges)
+            mst.edges[node]?.removeAll()
+        }
+        
+        // Prioritize the edges
+        edgeList.sortInPlace { (lhs, rhs) -> Bool in
+            return lhs.weight < rhs.weight
+        }
+        
+        // Keep track of the components
+        let components = UnionFind(items: Array(nodes))
+        
+        // Take the edges by minimum weight
+        for edge in edgeList {
+            // If everything is connected, don't bother continuing
+            if components.count == 1 { break }
+            
+            guard let fromComp = components.find(edge.from),
+                let toComp = components.find(edge.to) else { continue }
+            
+            if fromComp != toComp {
+                mst.addEdge(edge.weight, from: edge.from.key, to: edge.to.key)
+                components.union(fromComp, toComp)
             }
         }
-        return nil
+        
+        return mst
     }
 }
 
-extension DirectedGraph: CustomStringConvertible {
-    public var description: String {
-        return "Nodes: \(nodes)\nEdges:\(edges)"
-    }
-}

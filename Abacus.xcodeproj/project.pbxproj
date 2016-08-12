@@ -14,6 +14,8 @@
 		F71CB45C1D4B890E006CE1DA /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71CB45B1D4B890E006CE1DA /* Graph.swift */; };
 		F71CB45E1D4B8AD8006CE1DA /* UndirectedGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = F71CB45D1D4B8AD8006CE1DA /* UndirectedGraph.swift */; };
 		F77C47121D5B760C00CDF8C7 /* DirectedGraph.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C47111D5B760C00CDF8C7 /* DirectedGraph.swift */; };
+		F77C47141D5CE4EC00CDF8C7 /* Arithmetic.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C47131D5CE4EC00CDF8C7 /* Arithmetic.swift */; };
+		F77C47171D5CECEE00CDF8C7 /* UnionFind.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C47161D5CECEE00CDF8C7 /* UnionFind.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -37,6 +39,8 @@
 		F71CB45B1D4B890E006CE1DA /* Graph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
 		F71CB45D1D4B8AD8006CE1DA /* UndirectedGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UndirectedGraph.swift; sourceTree = "<group>"; };
 		F77C47111D5B760C00CDF8C7 /* DirectedGraph.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DirectedGraph.swift; sourceTree = "<group>"; };
+		F77C47131D5CE4EC00CDF8C7 /* Arithmetic.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Arithmetic.swift; sourceTree = "<group>"; };
+		F77C47161D5CECEE00CDF8C7 /* UnionFind.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UnionFind.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,10 +83,9 @@
 		F71CB4401D4B866F006CE1DA /* Abacus */ = {
 			isa = PBXGroup;
 			children = (
+				F77C47131D5CE4EC00CDF8C7 /* Arithmetic.swift */,
 				F71CB4491D4B86B6006CE1DA /* Constants.swift */,
-				F71CB45B1D4B890E006CE1DA /* Graph.swift */,
-				F71CB45D1D4B8AD8006CE1DA /* UndirectedGraph.swift */,
-				F77C47111D5B760C00CDF8C7 /* DirectedGraph.swift */,
+				F77C47151D5CECE200CDF8C7 /* Graph */,
 				F71CB45A1D4B88F3006CE1DA /* Other */,
 			);
 			path = Abacus;
@@ -104,6 +107,17 @@
 				F71CB4431D4B8670006CE1DA /* Info.plist */,
 			);
 			name = Other;
+			sourceTree = "<group>";
+		};
+		F77C47151D5CECE200CDF8C7 /* Graph */ = {
+			isa = PBXGroup;
+			children = (
+				F77C47111D5B760C00CDF8C7 /* DirectedGraph.swift */,
+				F71CB45B1D4B890E006CE1DA /* Graph.swift */,
+				F71CB45D1D4B8AD8006CE1DA /* UndirectedGraph.swift */,
+				F77C47161D5CECEE00CDF8C7 /* UnionFind.swift */,
+			);
+			name = Graph;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -214,9 +228,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F77C47141D5CE4EC00CDF8C7 /* Arithmetic.swift in Sources */,
 				F77C47121D5B760C00CDF8C7 /* DirectedGraph.swift in Sources */,
 				F71CB45C1D4B890E006CE1DA /* Graph.swift in Sources */,
 				F71CB45E1D4B8AD8006CE1DA /* UndirectedGraph.swift in Sources */,
+				F77C47171D5CECEE00CDF8C7 /* UnionFind.swift in Sources */,
 				F71CB44A1D4B86B6006CE1DA /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

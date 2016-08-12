@@ -128,4 +128,35 @@ class AbacusTests: XCTestCase {
             print("\(key)")
         }
     }
+    
+    func testUndirectedKruskal() {
+        let graph = UndirectedGraph<Int, Int>()
+        graph.addNode(0)
+        graph.addNode(1)
+        graph.addNode(2)
+        graph.addNode(3)
+        graph.addNode(4)
+        graph.addNode(5)
+        graph.addNode(6)
+        graph.addNode(7)
+        graph.addNode(8)
+        
+        graph.addEdge(4, from: 0, to: 1)
+        graph.addEdge(8, from: 0, to: 7)
+        graph.addEdge(8, from: 1, to: 2)
+        graph.addEdge(11, from: 1, to: 7)
+        graph.addEdge(7, from: 2, to: 3)
+        graph.addEdge(4, from: 2, to: 5)
+        graph.addEdge(2, from: 2, to: 8)
+        graph.addEdge(9, from: 3, to: 4)
+        graph.addEdge(14, from: 3, to: 5)
+        graph.addEdge(10, from: 4, to: 5)
+        graph.addEdge(2, from: 5, to: 6)
+        graph.addEdge(1, from: 6, to: 7)
+        graph.addEdge(6, from: 6, to: 8)
+        graph.addEdge(7, from: 7, to: 8)
+        
+        let mst = graph.kruskal()
+        print("Kruskal\n\(mst)")
+    }
 }

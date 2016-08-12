@@ -28,7 +28,7 @@ func == <K: Hashable>(lhs: GraphNode<K>, rhs: GraphNode<K>) -> Bool {
     return lhs.key == rhs.key
 }
 
-struct GraphEdge<KeyType: Hashable, WeightType: Comparable>: CustomStringConvertible {
+struct GraphEdge<KeyType: Hashable, WeightType: Arithmetic>: CustomStringConvertible {
     let from: GraphNode<KeyType>
     let to: GraphNode<KeyType>
     let weight: WeightType
@@ -45,7 +45,7 @@ struct GraphEdge<KeyType: Hashable, WeightType: Comparable>: CustomStringConvert
 
 public protocol Graph {
     associatedtype KeyType: Hashable
-    associatedtype WeightType: Comparable
+    associatedtype WeightType: Arithmetic
     
     mutating func addNode(key: KeyType)
     mutating func removeNode(key: KeyType)

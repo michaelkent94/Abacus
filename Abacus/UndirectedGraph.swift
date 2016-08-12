@@ -8,9 +8,21 @@
 
 import Foundation
 
-public final class UndirectedGraph<K: Hashable, W: Comparable>: DirectedGraph<K, W> {
+public final class UndirectedGraph<K: Hashable, W: Arithmetic>: DirectedGraph<K, W> {
     
     public override init() { }
+    
+    private init(graph: DirectedGraph<KeyType, WeightType>) { }
+    public convenience init(graph: UndirectedGraph<KeyType, WeightType>) {
+        self.init()
+        nodes = graph.nodes
+        edges = graph.edges
+    }
+    
+    override func copy() -> AnyObject {
+        let graph = UndirectedGraph(graph: self)
+        return graph
+    }
     
     // MARK: - Modification
     
