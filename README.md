@@ -14,13 +14,15 @@ and may be partially incomplete.
  * BFS
  * DFS
  * MST (Kruskal)
+* Trees
+ * Binary, BST
 
 ### Planned
 * Graph Algorithms (for Directed and Undirected)
  * Dijkstra
  * MST (Prim)
 * Trees
- * Binary, BST
+ * AVL
  * Trie
  * 2-3 Tree
  * More?
