@@ -159,4 +159,40 @@ class AbacusTests: XCTestCase {
         let mst = graph.kruskal()
         print("Kruskal\n\(mst)")
     }
+    
+    func testBSTPreorder() {
+        let bst = BinarySearchTree<Int>()
+        bst.insert(key: 4)
+        bst.insert(key: 2)
+        bst.insert(key: 1)
+        bst.insert(key: 3)
+        
+        bst.preorder { key in
+            print("\(key)")
+        }
+    }
+    
+    func testBSTPostorder() {
+        let bst = BinarySearchTree<Int>()
+        bst.insert(key: 4)
+        bst.insert(key: 2)
+        bst.insert(key: 1)
+        bst.insert(key: 3)
+        
+        bst.postorder { key in
+            print("\(key)")
+        }
+    }
+    
+    func testBSTInorder() {
+        let bst = BinarySearchTree<Int>()
+        bst.insert(key: 4)
+        bst.insert(key: 2)
+        bst.insert(key: 1)
+        bst.insert(key: 3)
+        
+        bst.inorder { key in
+            print("\(key)")
+        }
+    }
 }

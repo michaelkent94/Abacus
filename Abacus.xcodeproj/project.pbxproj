@@ -19,6 +19,10 @@
 		F77C47191D5E25A300CDF8C7 /* PathFinding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C47181D5E25A300CDF8C7 /* PathFinding.swift */; };
 		F77C471B1D5E25C500CDF8C7 /* Searching.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C471A1D5E25C500CDF8C7 /* Searching.swift */; };
 		F77C471D1D5E260600CDF8C7 /* MinimumSpanningTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C471C1D5E260600CDF8C7 /* MinimumSpanningTree.swift */; };
+		F77C47211D5E2D1800CDF8C7 /* Tree.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C47201D5E2D1800CDF8C7 /* Tree.swift */; };
+		F77C47231D5E31B100CDF8C7 /* BinaryTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C47221D5E31B100CDF8C7 /* BinaryTree.swift */; };
+		F77C47251D5E323700CDF8C7 /* BinarySearchTree.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C47241D5E323700CDF8C7 /* BinarySearchTree.swift */; };
+		F77C472A1D6370AD00CDF8C7 /* Traversal.swift in Sources */ = {isa = PBXBuildFile; fileRef = F77C47291D6370AD00CDF8C7 /* Traversal.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +51,10 @@
 		F77C47181D5E25A300CDF8C7 /* PathFinding.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PathFinding.swift; sourceTree = "<group>"; };
 		F77C471A1D5E25C500CDF8C7 /* Searching.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Searching.swift; sourceTree = "<group>"; };
 		F77C471C1D5E260600CDF8C7 /* MinimumSpanningTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MinimumSpanningTree.swift; sourceTree = "<group>"; };
+		F77C47201D5E2D1800CDF8C7 /* Tree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tree.swift; sourceTree = "<group>"; };
+		F77C47221D5E31B100CDF8C7 /* BinaryTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinaryTree.swift; sourceTree = "<group>"; };
+		F77C47241D5E323700CDF8C7 /* BinarySearchTree.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BinarySearchTree.swift; sourceTree = "<group>"; };
+		F77C47291D6370AD00CDF8C7 /* Traversal.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Traversal.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -92,6 +100,7 @@
 				F77C47131D5CE4EC00CDF8C7 /* Arithmetic.swift */,
 				F71CB4491D4B86B6006CE1DA /* Constants.swift */,
 				F77C47151D5CECE200CDF8C7 /* Graph */,
+				F77C471F1D5E2D0C00CDF8C7 /* Tree */,
 				F71CB45A1D4B88F3006CE1DA /* Other */,
 			);
 			path = Abacus;
@@ -133,6 +142,25 @@
 				F77C47181D5E25A300CDF8C7 /* PathFinding.swift */,
 				F77C471A1D5E25C500CDF8C7 /* Searching.swift */,
 				F77C471C1D5E260600CDF8C7 /* MinimumSpanningTree.swift */,
+			);
+			name = Algorithms;
+			sourceTree = "<group>";
+		};
+		F77C471F1D5E2D0C00CDF8C7 /* Tree */ = {
+			isa = PBXGroup;
+			children = (
+				F77C47281D63708F00CDF8C7 /* Algorithms */,
+				F77C47201D5E2D1800CDF8C7 /* Tree.swift */,
+				F77C47221D5E31B100CDF8C7 /* BinaryTree.swift */,
+				F77C47241D5E323700CDF8C7 /* BinarySearchTree.swift */,
+			);
+			name = Tree;
+			sourceTree = "<group>";
+		};
+		F77C47281D63708F00CDF8C7 /* Algorithms */ = {
+			isa = PBXGroup;
+			children = (
+				F77C47291D6370AD00CDF8C7 /* Traversal.swift */,
 			);
 			name = Algorithms;
 			sourceTree = "<group>";
@@ -250,7 +278,11 @@
 				F71CB45C1D4B890E006CE1DA /* Graph.swift in Sources */,
 				F77C47191D5E25A300CDF8C7 /* PathFinding.swift in Sources */,
 				F71CB45E1D4B8AD8006CE1DA /* UndirectedGraph.swift in Sources */,
+				F77C472A1D6370AD00CDF8C7 /* Traversal.swift in Sources */,
+				F77C47211D5E2D1800CDF8C7 /* Tree.swift in Sources */,
+				F77C47231D5E31B100CDF8C7 /* BinaryTree.swift in Sources */,
 				F77C471D1D5E260600CDF8C7 /* MinimumSpanningTree.swift in Sources */,
+				F77C47251D5E323700CDF8C7 /* BinarySearchTree.swift in Sources */,
 				F77C47171D5CECEE00CDF8C7 /* UnionFind.swift in Sources */,
 				F77C471B1D5E25C500CDF8C7 /* Searching.swift in Sources */,
 				F71CB44A1D4B86B6006CE1DA /* Constants.swift in Sources */,
