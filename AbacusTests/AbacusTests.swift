@@ -21,16 +21,6 @@ class AbacusTests: XCTestCase {
         super.tearDown()
     }
     
-    func testUndirectedGraph() {
-        let graph = UndirectedGraph<Int, Int>()
-        graph.addNode(1)
-        graph.addNode(2)
-        graph.addEdge(0, from: 1, to: 2)
-        graph.addEdge(1, from: 1, to: 2)
-        graph.removeEdge(0, from: 1, to: 2)
-        print("\(graph)")
-    }
-    
     func testUndirectedBfs() {
         let graph = UndirectedGraph<Int, Int>()
         graph.addNode(1)
@@ -45,12 +35,12 @@ class AbacusTests: XCTestCase {
         graph.addEdge(0, from: 4, to: 2)
         graph.addEdge(0, from: 2, to: 5)
         graph.addEdge(0, from: 3, to: 6)
-        print("\(graph)")
         
-        print("BFS")
+        var keys = [Int]()
         graph.bfs(rootedAt: 1) { key in
-            print("\(key)")
+            keys.append(key)
         }
+        XCTAssert(keys == [1, 2, 3, 4, 5, 6])
     }
     
     func testUndirectedDfs() {
@@ -67,22 +57,12 @@ class AbacusTests: XCTestCase {
         graph.addEdge(0, from: 3, to: 4)
         graph.addEdge(0, from: 5, to: 2)
         graph.addEdge(0, from: 5, to: 6)
-        print("\(graph)")
         
-        print("DFS")
+        var keys = [Int]()
         graph.dfs(rootedAt: 1) { key in
-            print("\(key)")
+            keys.append(key)
         }
-    }
-    
-    func testDirectedGraph() {
-        let graph = DirectedGraph<Int, Int>()
-        graph.addNode(1)
-        graph.addNode(2)
-        graph.addEdge(0, from: 1, to: 2)
-        graph.addEdge(1, from: 1, to: 2)
-        graph.removeEdge(0, from: 1, to: 2)
-        print("\(graph)")
+        XCTAssert(keys == [1, 2, 5, 6, 3, 4])
     }
     
     func testDirectedBfs() {
@@ -99,12 +79,12 @@ class AbacusTests: XCTestCase {
         graph.addEdge(0, from: 4, to: 2)
         graph.addEdge(0, from: 2, to: 5)
         graph.addEdge(0, from: 3, to: 6)
-        print("\(graph)")
         
-        print("BFS")
+        var keys = [Int]()
         graph.bfs(rootedAt: 1) { key in
-            print("\(key)")
+            keys.append(key)
         }
+        XCTAssert(keys == [1, 2, 5])
     }
     
     func testDirectedDfs() {
@@ -121,12 +101,12 @@ class AbacusTests: XCTestCase {
         graph.addEdge(0, from: 3, to: 4)
         graph.addEdge(0, from: 5, to: 2)
         graph.addEdge(0, from: 5, to: 6)
-        print("\(graph)")
         
-        print("DFS")
+        var keys = [Int]()
         graph.dfs(rootedAt: 1) { key in
-            print("\(key)")
+            keys.append(key)
         }
+        XCTAssert(keys == [1, 2, 3, 4])
     }
     
     func testUndirectedKruskal() {
@@ -157,7 +137,12 @@ class AbacusTests: XCTestCase {
         graph.addEdge(7, from: 7, to: 8)
         
         let mst = graph.kruskal()
-        print("Kruskal\n\(mst)")
+        var keys = [Int]()
+        mst.bfs(rootedAt: 1) { key in
+            keys.append(key)
+        }
+        XCTAssert(keys == [1, 0, 2, 8, 5, 3, 6, 4, 7])
+        XCTAssert(mst.edgeCount == 8)
     }
     
     func testBSTPreorder() {
@@ -167,9 +152,11 @@ class AbacusTests: XCTestCase {
         bst.insert(key: 1)
         bst.insert(key: 3)
         
+        var keys = [Int]()
         bst.preorder { key in
-            print("\(key)")
+            keys.append(key)
         }
+        XCTAssert(keys == [4, 2, 1, 3])
     }
     
     func testBSTPostorder() {
@@ -179,9 +166,11 @@ class AbacusTests: XCTestCase {
         bst.insert(key: 1)
         bst.insert(key: 3)
         
+        var keys = [Int]()
         bst.postorder { key in
-            print("\(key)")
+            keys.append(key)
         }
+        XCTAssert(keys == [1, 3, 2, 4])
     }
     
     func testBSTInorder() {
@@ -191,8 +180,49 @@ class AbacusTests: XCTestCase {
         bst.insert(key: 1)
         bst.insert(key: 3)
         
+        var keys = [Int]()
         bst.inorder { key in
-            print("\(key)")
+            keys.append(key)
         }
+        XCTAssert(keys == [1, 2, 3, 4])
+    }
+    
+    func testBSTRemove() {
+        let bst = BinarySearchTree<Int>()
+        bst.insert(key: 4)
+        bst.insert(key: 2)
+        bst.insert(key: 1)
+        bst.insert(key: 3)
+        
+        bst.remove(key: 2)
+        
+        var keys = [Int]()
+        bst.inorder { key in
+            keys.append(key)
+        }
+        XCTAssert(keys == [1, 3, 4])
+    }
+    
+    func testBSTContains() {
+        let bst = BinarySearchTree<Int>()
+        bst.insert(key: 4)
+        bst.insert(key: 2)
+        bst.insert(key: 1)
+        bst.insert(key: 3)
+        
+        XCTAssert(bst.contains(key: 2))
+        XCTAssert(bst.contains(key: 3))
+        XCTAssert(!bst.contains(key: 5))
+    }
+    
+    func testBSTMinMax() {
+        let bst = BinarySearchTree<Int>()
+        bst.insert(key: 4)
+        bst.insert(key: 2)
+        bst.insert(key: 1)
+        bst.insert(key: 3)
+        
+        XCTAssert(bst.minimum == 1)
+        XCTAssert(bst.maximum == 4)
     }
 }

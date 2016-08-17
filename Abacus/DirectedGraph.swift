@@ -15,6 +15,18 @@ public class DirectedGraph<K: Hashable, W: Arithmetic>: Graph {
     var nodes = Set<GraphNode<KeyType>>()
     var edges = Dictionary<GraphNode<KeyType>, [GraphEdge<KeyType, WeightType>]>()
     
+    public var nodeCount: Int {
+        return nodes.count
+    }
+    
+    public var edgeCount: Int {
+        var count = 0
+        for (_, value) in edges {
+            count += value.count
+        }
+        return count
+    }
+    
     public init() { }
     
     public convenience init(graph: DirectedGraph<KeyType, WeightType>) {

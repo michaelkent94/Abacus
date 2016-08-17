@@ -10,6 +10,14 @@ import Foundation
 
 public final class UndirectedGraph<K: Hashable, W: Arithmetic>: DirectedGraph<K, W> {
     
+    public override var edgeCount: Int {
+        var count = 0
+        for (_, value) in edges {
+            count += value.count
+        }
+        return count / 2
+    }
+    
     public override init() { }
     
     private init(graph: DirectedGraph<KeyType, WeightType>) { }

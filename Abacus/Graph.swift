@@ -47,6 +47,9 @@ public protocol Graph {
     associatedtype KeyType: Hashable
     associatedtype WeightType: Arithmetic
     
+    var nodeCount: Int { get }
+    var edgeCount: Int { get }
+    
     mutating func addNode(key: KeyType)
     mutating func removeNode(key: KeyType)
     mutating func addEdge(weight: WeightType, from: KeyType, to: KeyType)
