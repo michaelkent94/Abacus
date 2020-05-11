@@ -10,36 +10,36 @@ create a versatile library for others to use.
 and may be partially incomplete.
 
 * Undirected/Directed Graph
- * Add/Remove Nodes/Edges
- * BFS
- * DFS
- * MST (Kruskal)
+  * Add/Remove Nodes/Edges
+  * BFS
+  * DFS
+  * MST (Kruskal)
 * Trees
- * Binary, BST
+  * Binary, BST
 
 ### Planned
 * Graph Algorithms (for Directed and Undirected)
- * Dijkstra
- * MST (Prim)
+  * Dijkstra
+  * MST (Prim)
 * Trees
- * AVL
- * Trie
- * 2-3 Tree
- * More?
+  * AVL
+  * Trie
+  * 2-3 Tree
+  * More?
 * Heap
- * Fibonacci
- * Binary
+  * Fibonacci
+  * Binary
 * Other useful structures
 
 ### Possible
 * Abstract Algebra concepts
- * Groups
- * Rings
- * Fields
+  * Groups
+  * Rings
+  * Fields
 * Matrices
 * Equation solving
- * Linear
- * Differential
+  * Linear
+  * Differential
  
 ### Suggestions
 Any suggestions on features are always welcome.
